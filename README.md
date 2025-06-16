@@ -42,8 +42,7 @@ git clone https://github.com/sergiotechx/StarMakerSorobanV1S2.git
 
 [**Task manager**](https://github.com/sergiotechx/StarMakerSorobanV1S2/tree/main/reto)
 
-Cada funcion del contrato tiene 1 error, con las herramientas:   
- 
+Cada funcion del contrato tiene 1 error, con las herramientas:   
 
 *   🔎cargo test
 *   🔎cargo test -- --nocapture
@@ -53,3 +52,11 @@ Cada funcion del contrato tiene 1 error, con las herramientas: 
 *   🔎plugin de Visual Studio Code →codelldb
 
 Corregir los errores y poner la solución en tu repositorio github.
+
+**Documentación oficial:**
+
+[https://stellar.org/es/desarrolladores](https://stellar.org/es/desarrolladores)
+
+**Discord de Stellar:**
+
+[https://discord.gg/N5YYutUj](https://discord.gg/N5YYutUj)
