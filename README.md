@@ -1,8 +1,8 @@
-\## StarMakerSorobanV1S2
+**StarMakerSorobanV1S2**
 
 Workshop para BAF, programa StarMaker Workshop sesion 2 V1.0
 
-\---
+---
 
 Para esta sesión descargar este repositorio:
 
