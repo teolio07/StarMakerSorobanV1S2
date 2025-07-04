@@ -44,6 +44,7 @@ git clone https://github.com/sergiotechx/StarMakerSorobanV1S2.git
 
 Cada funcion del contrato tiene 1 error, con las herramientas:   
 
+*   🔎cargo check
 *   🔎cargo test
 *   🔎cargo test -- --nocapture
 *   🔎stellar contract build
