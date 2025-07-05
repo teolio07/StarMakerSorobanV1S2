@@ -61,8 +61,8 @@ impl TaskContract {
             .get::<(Symbol, u32), Task>(&(TASK_KEY, id))
         {
             task.status = new_status.clone();
-            env.storage().instance().set(&task, &(TASK_KEY, id));
-
+            env.storage().instance().set(&(TASK_KEY, id), &task); // ✅ CORREGIDO
+    
             log!(&env, "Task {} status updated", id);
             true
         } else {
