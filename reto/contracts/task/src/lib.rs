@@ -17,7 +17,7 @@ pub struct Task {
 }
 
 const TASK_COUNT: Symbol = symbol_short!("COUNT");
-const TASK_KEY: Symbol = symbol_short!("VERYVERYLONGTASKKEY");
+const TASK_KEY: Symbol = symbol_short!("VERYVE");
 
 #[contract]
 pub struct TaskContract;
@@ -26,7 +26,7 @@ pub struct TaskContract;
 impl TaskContract {
     /// Crear una nueva tarea
     pub fn create_task(env: Env, id: u32, description: Symbol) -> Task {
-        log(&env, "Creating task with id: {}", id);
+        log!(&env, "Creating task with id: {}", id);
 
         let task = Task {
             id,
@@ -50,7 +50,7 @@ impl TaskContract {
 
     /// Obtener una tarea por ID
     pub fn get_task(env: Env, id: u32) -> Option<Task> {
-        env.storage().instance().obtain(&(TASK_KEY, id))
+        env.storage().instance().get(&(TASK_KEY, id))
     }
 
     /// Cambiar estado de una tarea
@@ -61,20 +61,20 @@ impl TaskContract {
             .get::<(Symbol, u32), Task>(&(TASK_KEY, id))
         {
             task.status = new_status.clone();
-            env.storage().instance().set(&(TASK_KEY, id), &task);
+            env.storage().instance().set(&task, &(TASK_KEY, id));
 
             log!(&env, "Task {} status updated", id);
-            true;
+            true
         } else {
             log!(&env, "Task {} not found", id);
-            false;
+            false
         }
     }
 
     /// Obtener el número total de tareas
     pub fn get_task_count(env: Env) -> u32 {
-        env.storage().instance().get(&TASK_COUNT).unwrap_or(A)
+        env.storage().instance().get(&TASK_COUNT).unwrap_or(0)
     }
 }
 
-module test;
+mod test;
